@@ -1,0 +1,261 @@
+from airflow.models.dag import DAG
+from airflow.operators.python import PythonOperator
+from datetime import datetime
+import logging
+import random
+import time
+import json
+import requests 
+import os # Crucial for fetching the API key securely
+
+log = logging.getLogger(__name__)
+
+# --- API Constants (For Gemini Generation) ---
+# SECURE: Read the API key from the environment variable. 
+# You MUST set GEMINI_API_KEY in your docker-compose.yaml file.
+GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent"
+API_KEY = os.getenv("GEMINI_API_KEY", "") 
+
+# --- Helper Function: Determines the Season ---
+def get_current_season():
+    """
+    Determines the current season based on the month (Northern Hemisphere).
+    """
+    now = datetime.now()
+    month = now.month
+    
+    if month in (12, 1, 2):
+        return 'Winter'
+    elif month in (3, 4, 5):
+        return 'Spring'
+    elif month in (6, 7, 8):
+        return 'Summer'
+    else: # 9, 10, 11
+        return 'Autumn'
+
+# --- 1. Motivation Logic Function (DYNAMIC GENERATION) ---
+def generate_motivation(**kwargs):
+    """
+    Generates a unique, daily motivational message using the Gemini API.
+    Includes robust error handling and a static fallback.
+    """
+    log.info("Generating unique daily motivational message using Gemini API...")
+    
+    if not API_KEY:
+        log.warning("API_KEY not found in environment. Using static fallback for motivation.")
+        return random.choice([
+            "Your effort today defines your reality tomorrow.",
+            "Embrace the process, and the results will follow.",
+            "A focused mind is an unstoppable force.",
+        ])
+
+    system_prompt = "You are a concise, upbeat motivational coach. Generate one short, unique, and inspiring sentence for the start of the day. Do not include quotes or names."
+    user_query = "Generate a new motivational sentence about starting strong and focusing on daily goals."
+
+    payload = {
+        "contents": [{"parts": [{"text": user_query}]}],
+        "systemInstruction": {"parts": [{"text": system_prompt}]}
+    }
+
+    # --- API Call with Exponential Backoff ---
+    max_retries = 3
+    delay = 1
+    
+    for attempt in range(max_retries):
+        try:
+            # Make the POST request to the Gemini API endpoint
+            response = requests.post(f"{GEMINI_API_URL}?key={API_KEY}", json=payload, timeout=10)
+            response.raise_for_status() 
+            
+            result = response.json()
+            
+            # Extract the generated text from the structured response
+            motivation_message = result.get('candidates', [{}])[0].get('content', {}).get('parts', [{}])[0].get('text', None)
+            
+            if motivation_message:
+                log.info(f"Gemini-Generated Motivation: {motivation_message.strip()}")
+                return motivation_message.strip()
+            else:
+                log.error("Gemini API returned no text content. Attempting fallback.")
+
+        except requests.exceptions.RequestException as e:
+            log.warning(f"Gemini API call failed on attempt {attempt + 1}/{max_retries}: {e}")
+            if attempt < max_retries - 1:
+                time.sleep(delay)
+                delay *= 2 
+            else:
+                log.error("Gemini API call failed after max retries. Using static fallback.")
+                break
+
+    # --- Static Fallback ---
+    static_list = [
+        "Your effort today defines your reality tomorrow.",
+        "Embrace the process, and the results will follow.",
+        "A focused mind is an unstoppable force.",
+    ]
+    fallback_message = random.choice(static_list)
+    log.info(f"Using static fallback motivation: {fallback_message}")
+    return fallback_message
+
+# --- 2. Playlist Suggestion Logic Function (DYNAMIC ALBUM/ARTIST) ---
+def suggest_playlist(**kwargs):
+    """
+    Determines the current season and suggests a specific Artist, Album, and Reason 
+    using the Gemini API with a structured JSON response.
+    """
+    season = get_current_season()
+    log.info(f"It is currently {season}. Generating dynamic album/artist suggestion.")
+    
+    # Define prompts based on season
+    seasonal_prompts = {
+        'Winter': "Suggest a reflective, cozy, and slightly melancholic album, fitting for the deep winter months.",
+        'Spring': "Suggest an upbeat, optimistic, and energetic album suitable for fresh starts and new growth.",
+        'Summer': "Suggest a sunny, driving, classic album with a clear, energetic sound for summer road trips or outdoor chilling.",
+        'Autumn': "Suggest a complex, warm, contemplative jazz or instrumental album perfect for crisp air and contemplation.",
+    }
+    
+    user_query = seasonal_prompts[season]
+    
+    # Check for API Key before making the call
+    if not API_KEY:
+        log.warning("API_KEY not found in environment. Using static fallback for music suggestion.")
+        # Skip API call and go straight to static fallback
+        pass 
+    else:
+        # Define the required JSON output schema for the model
+        schema = {
+            "type": "OBJECT",
+            "properties": {
+                "artist": {"type": "STRING", "description": "The name of the recommended artist."},
+                "album": {"type": "STRING", "description": "The name of the recommended album."},
+                "reason": {"type": "STRING", "description": "A short, one-sentence reason for the recommendation."},
+            },
+            "required": ["artist", "album", "reason"]
+        }
+
+        system_prompt = f"You are a music curator specializing in seasonal mood playlists. Based on the {season} season, recommend a single album. Your output MUST be a valid JSON object matching the provided schema."
+
+        payload = {
+            "contents": [{"parts": [{"text": user_query}]}],
+            "systemInstruction": {"parts": [{"text": system_prompt}]},
+            "generationConfig": {
+                "responseMimeType": "application/json",
+                "responseSchema": schema
+            }
+        }
+        
+        # --- API Call with Exponential Backoff ---
+        max_retries = 3
+        delay = 1
+        
+        for attempt in range(max_retries):
+            try:
+                response = requests.post(f"{GEMINI_API_URL}?key={API_KEY}", json=payload, timeout=15)
+                response.raise_for_status() 
+                
+                result = response.json()
+                
+                # Extract and parse the JSON string from the response
+                json_text = result.get('candidates', [{}])[0].get('content', {}).get('parts', [{}])[0].get('text', '{}')
+                suggestion = json.loads(json_text)
+                
+                if 'artist' in suggestion and 'album' in suggestion:
+                    log.info(f"Gemini-Generated Suggestion: Artist={suggestion['artist']}, Album={suggestion['album']}")
+                    # Return the structured data as a JSON string for easy XCom transfer
+                    return json_text 
+                else:
+                    log.error(f"Gemini API returned invalid JSON structure: {json_text}. Attempting fallback.")
+
+            except (requests.exceptions.RequestException, json.JSONDecodeError) as e:
+                log.warning(f"API/JSON error on attempt {attempt + 1}/{max_retries}: {e}")
+                if attempt < max_retries - 1:
+                    time.sleep(delay)
+                    delay *= 2 
+                else:
+                    log.error("API call failed after max retries. Using static fallback.")
+                    break
+
+    # --- Static Fallback (Ensures same output structure as API) ---
+    fallback_suggestions = {
+        'Winter': {"artist": "Olafur Arnalds", "album": "re:member", "reason": "Complex, beautiful piano and string arrangements perfect for cold evenings."},
+        'Spring': {"artist": "The Strokes", "album": "Is This It", "reason": "Fast, catchy rhythms and simple instrumentation that feel like a spring awakening."},
+        'Summer': {"artist": "Bob Marley & The Wailers", "album": "Legend", "reason": "The quintessential reggae album, full of sunshine and timeless good vibes."},
+        'Autumn': {"artist": "Miles Davis", "album": "Kind of Blue", "reason": "Smooth, modal jazz that provides the perfect, contemplative backdrop for the shifting colors of fall."},
+    }
+    fallback_data = fallback_suggestions[season]
+    log.info(f"Using static fallback: {fallback_data['artist']} - {fallback_data['album']}")
+    # Return JSON string for consistency
+    return json.dumps(fallback_data)
+
+# --- 3. Final Logging Function ---
+def log_final_report(**kwargs):
+    """
+    Pulls both the motivation and playlist reports, parses the JSON playlist data, 
+    and prints them clearly.
+    """
+    ti = kwargs['ti'] 
+    
+    # Pull data from the two previous tasks using their task_ids
+    motivation_message = ti.xcom_pull(task_ids='generate_daily_motivation')
+    playlist_json_str = ti.xcom_pull(task_ids='suggest_daily_playlist')
+    
+    # Safely parse the JSON string from the playlist task
+    try:
+        playlist_data = json.loads(playlist_json_str)
+        current_season = get_current_season()
+    except (TypeError, json.JSONDecodeError):
+        log.error("Failed to parse playlist data JSON. Using raw string.")
+        playlist_data = None
+        current_season = "Unknown"
+        
+    log.info("====================================")
+    log.info("====== YOUR DAILY MORNING REPORT =====")
+    log.info("====================================")
+    
+    log.info(f"MOTIVATION:")
+    log.info(f"-> {motivation_message}")
+    log.info("")
+    
+    log.info("MUSIC SUGGESTION:")
+    if playlist_data:
+        log.info(f"Seasonal Vibe: {current_season}")
+        log.info(f"Album: {playlist_data.get('album', 'N/A')}")
+        log.info(f"Artist: {playlist_data.get('artist', 'N/A')}")
+        log.info(f"Recommendation Reason: {playlist_data.get('reason', 'N/A')}")
+    else:
+        log.info(f"-> {playlist_json_str}") # Print raw string if parsing failed
+        
+    log.info("====================================")
+    
+    log.info("Final Report logged successfully.")
+
+
+# --- DAG Definition ---
+with DAG(
+    dag_id='daily_motivation_and_playlist',
+    start_date=datetime(2023, 1, 1),
+    schedule_interval='0 7 * * *', # Runs every day at 7:00 AM UTC
+    catchup=False,
+    tags=['daily', 'motivation', 'music', 'scheduler'],
+) as dag:
+    
+    # Task 1: Generate a random motivational message (Now uses Gemini API)
+    motivation_task = PythonOperator(
+        task_id='generate_daily_motivation',
+        python_callable=generate_motivation,
+    )
+
+    # Task 2: Suggest a seasonal album/artist (Now uses Gemini API with JSON)
+    playlist_task = PythonOperator(
+        task_id='suggest_daily_playlist',
+        python_callable=suggest_playlist,
+    )
+
+    # Task 3: Combine and Print Final Report
+    final_report_task = PythonOperator(
+        task_id='log_final_report',
+        python_callable=log_final_report,
+    )
+
+    # Define the dependencies:
+    [motivation_task, playlist_task] >> final_report_task
