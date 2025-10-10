@@ -1,73 +1,84 @@
-Daily Personalized Morning Report Generator
+Airflow AI/GenAI Project Repository
+
 Overview
-This Apache Airflow Directed Acyclic Graph (DAG) is a scheduled data pipeline designed to generate a personalized, dynamic "Daily Morning Report." Instead of relying on static data, it leverages the power of the Google Gemini API to create contextually relevant and unique suggestions for motivation, music, and beverages, delivered directly to your Airflow logs every morning.
 
-This project serves as a practical, real-world example of integrating modern Generative AI (GenAI) into a secure, scheduled data orchestration workflow.
+This repository serves as a Project Playground for developing, scheduling, and orchestrating data and AI/ML pipelines using Apache Airflow.
 
-Key Features
-The DAG runs three parallel Python tasks that call the Gemini API, ensuring the suggestions are always fresh and tailored to the current date and season.
+The primary purpose of the DAGs in this collection is to demonstrate the secure and scalable integration of Generative AI (GenAI), specifically the Google Gemini API, into production-ready data workflows.
 
-1. Daily Motivation
-What it is: A concise, upbeat, and unique motivational sentence to start the day.
+Repository Structure & Core Features
 
-How it works: The model is given a strict system prompt to act as an upbeat coach, ensuring the output is always short and inspiring.
+This repository is structured to support multiple Airflow DAGs that share common dependencies and security configurations.
 
-2. Seasonal Music Playlist Suggestion
-What it is: A recommendation for a specific Artist and Album that matches the mood of the current season (Winter, Spring, Summer, Autumn).
+Directory Structure
 
-How it works: The model is instructed to return a structured JSON object with the Artist, Album, and a short Reason, which is then parsed by the Python task.
+dags/: Contains all the individual Directed Acyclic Graph (.py) files. Each file represents an automated, scheduled pipeline.
 
-3. Smart Daily Beverage Suggestion
-What it is: A coffee or beverage recommendation tailored to the weather/time of year.
+.env: (Local use only) Stores sensitive environment variables, such as API keys. This file is excluded by .gitignore.
 
-How it works: The Python logic dynamically adjusts the prompt sent to the Gemini API:
+docker-compose.yaml: Defines the local development Airflow environment (scheduler, worker, webserver).
 
-Summer: Specifically requests an iced or cold beverage.
+Example DAG Features
 
-October (Halloween Time): Prioritizes pumpkin-themed or heavily spiced autumnal drinks.
+DAGs within this repository typically focus on scheduled reports and dynamic content generation. For example, the daily_motivation_playlist.py DAG demonstrates:
 
-Other Seasons: Provides general, seasonal suggestions.
+Contextual Content: Generating output (e.g., music or coffee suggestions) based on the current date and season.
+
+Structured Output: Utilizing JSON schemas in API calls to ensure predictable, machine-readable results.
+
+Secure API Calls: Implementing robust security and retry mechanisms for external service calls.
 
 Architecture & How It Works
-The entire pipeline is built within a single Airflow DAG file (daily_motivation_playlist.py) using standard Python components.
 
-Orchestration (Airflow): The DAG is scheduled to run every day at a set time (e.g., 7:00 AM UTC).
+All DAGs in this repository share a common dependency on the Gemini API for dynamic generation.
 
-API Security: The project relies on the GEMINI_API_KEY being securely passed to the Airflow worker/scheduler containers via environment variables (typically defined in a local .env file and configured in docker-compose.yaml).
+1. Secure API Key Management
 
-Dynamic Generation (Gemini API): Three separate Python functions make POST requests to the Gemini API endpoint (gemini-2.5-flash-preview-05-20).
+The most critical architectural principle is security. We avoid hardcoding secrets by following this process:
 
-Requests use specific system prompts and JSON schemas to ensure predictable and reliable output formats.
+Secret Storage: The key is stored in the local, untracked .env file: GEMINI_API_KEY="YOUR_API_KEY_GOES_HERE".
 
-An exponential backoff retry mechanism is implemented for each API call to gracefully handle transient network or service errors.
+Environment Integration: The docker-compose.yaml file is configured to load this variable and pass it to the necessary Airflow services (scheduler and worker) via the YAML syntax: GEMINI_API_KEY: ${GEMINI_API_KEY}.
 
-Data Flow (XComs): The three generation tasks push their resulting data (the motivation string and two JSON strings) into Airflow's XComs (Cross-Communication).
+Code Access: Python code within the DAGs accesses the key securely using the standard os.getenv("GEMINI_API_KEY") method.
 
-Final Report: The final task (log_final_report) pulls all three pieces of data from XComs, parses the JSON objects, and logs a clean, combined report to the Airflow task logs.
+2. Robust API Interaction
+
+Model: All GenAI tasks currently target the gemini-2.5-flash-preview-05-20 endpoint.
+
+Reliability: All API-calling functions include an exponential backoff retry mechanism to handle transient network issues and ensure DAG stability.
+
+Data Flow (XComs): Results from generator tasks are pushed via XComs (Cross-Communication) to a final logging or reporting task.
 
 Setup and Prerequisites
+
 1. Dependencies
-This project requires a standard Airflow environment setup (usually via Docker Compose) with Python dependencies for network requests and JSON handling.
+
+This project requires Python packages for API interaction and handling.
 
 # Required Python packages
 pip install requests
 
-2. API Key Configuration (Crucial)
-To use the dynamic generation features, you must configure your Gemini API Key.
 
-Get Your Key: Obtain a valid API key from Google AI Studio.
+2. Environment Setup (Crucial)
 
-Secure Storage (.env): Store your key securely in your Airflow environment's .env file (which should be added to .gitignore):
+Follow these steps to set up the environment and securely configure the API key for all DAGs in this repository:
+
+Obtain Key: Get your valid Gemini API key from Google AI Studio.
+
+Create .env: Create a file named .env in the root of this repository and add your key:
 
 # .env
-GEMINI_API_KEY="YOUR_API_KEY_GOES_HERE"
+GEMINI_API_KEY="PASTE_YOUR_KEY_HERE"
 
-Airflow Integration (docker-compose.yaml): Ensure your Airflow services (scheduler and worker) are configured to load this key as an environment variable:
 
-# Snippet from docker-compose.yaml
-environment:
-  # ... other airflow variables
-  - GEMINI_API_KEY=${GEMINI_API_KEY}
+Configure YAML: Ensure the docker-compose.yaml file includes the GEMINI_API_KEY reference in the environment section of the airflow-scheduler and airflow-worker services (this should already be done if you followed previous steps).
+
+Initial Build & Restart: Build and restart your Airflow containers to load the environment variables:
+
+docker compose up --build --detach
+
 
 3. Deployment
-Place the daily_motivation_playlist.py file into your designated Airflow DAGs folder and restart your Airflow environment to load the pipeline.
+
+Place any new DAG file (e.g., new_report.py) into the dags/ folder. Airflow will automatically detect and load the pipeline within minutes.
