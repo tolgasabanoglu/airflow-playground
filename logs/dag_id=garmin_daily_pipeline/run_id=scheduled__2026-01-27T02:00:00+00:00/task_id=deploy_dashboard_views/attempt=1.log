@@ -1,0 +1,36 @@
+[2026-01-28T10:00:00.885+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-01-28T10:00:00.891+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: garmin_daily_pipeline.deploy_dashboard_views scheduled__2026-01-27T02:00:00+00:00 [queued]>
+[2026-01-28T10:00:00.894+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: garmin_daily_pipeline.deploy_dashboard_views scheduled__2026-01-27T02:00:00+00:00 [queued]>
+[2026-01-28T10:00:00.895+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2026-01-28T10:00:00.898+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): deploy_dashboard_views> on 2026-01-27 02:00:00+00:00
+[2026-01-28T10:00:00.900+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=124) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-01-28T10:00:00.901+0000] {standard_task_runner.py:72} INFO - Started process 125 to run task
+[2026-01-28T10:00:00.902+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'garmin_daily_pipeline', 'deploy_dashboard_views', 'scheduled__2026-01-27T02:00:00+00:00', '--job-id', '69', '--raw', '--subdir', 'DAGS_FOLDER/garmin_daily_pipeline.py', '--cfg-path', '/tmp/tmpmklt14sk']
+[2026-01-28T10:00:00.902+0000] {standard_task_runner.py:105} INFO - Job 69: Subtask deploy_dashboard_views
+[2026-01-28T10:00:00.919+0000] {task_command.py:467} INFO - Running <TaskInstance: garmin_daily_pipeline.deploy_dashboard_views scheduled__2026-01-27T02:00:00+00:00 [running]> on host 996c176c0a46
+[2026-01-28T10:00:00.941+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='garmin_daily_pipeline' AIRFLOW_CTX_TASK_ID='deploy_dashboard_views' AIRFLOW_CTX_EXECUTION_DATE='2026-01-27T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-27T02:00:00+00:00'
+[2026-01-28T10:00:00.941+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-01-28T10:00:00.947+0000] {garmin_daily_pipeline.py:392} INFO - 📊 Deploying dashboard views...
+[2026-01-28T10:00:01.197+0000] {garmin_daily_pipeline.py:399} INFO - 📄 Reading SQL file: /opt/***/spatiotemporal/dashboard/looker_views.sql
+[2026-01-28T10:00:01.198+0000] {garmin_daily_pipeline.py:419} INFO - 🔨 Deploying 5 dashboard views...
+[2026-01-28T10:00:01.198+0000] {garmin_daily_pipeline.py:430} INFO -   [1/5] Deploying garmin_data.v_dashboard_daily...
+[2026-01-28T10:00:02.417+0000] {garmin_daily_pipeline.py:435} INFO -     ✅ Success
+[2026-01-28T10:00:02.418+0000] {garmin_daily_pipeline.py:430} INFO -   [2/5] Deploying garmin_data.v_dashboard_weekly...
+[2026-01-28T10:00:03.612+0000] {garmin_daily_pipeline.py:435} INFO -     ✅ Success
+[2026-01-28T10:00:03.613+0000] {garmin_daily_pipeline.py:430} INFO -   [3/5] Deploying garmin_data.v_dashboard_monthly...
+[2026-01-28T10:00:04.535+0000] {garmin_daily_pipeline.py:435} INFO -     ✅ Success
+[2026-01-28T10:00:04.535+0000] {garmin_daily_pipeline.py:430} INFO -   [4/5] Deploying garmin_data.v_dashboard_correlations...
+[2026-01-28T10:00:05.584+0000] {garmin_daily_pipeline.py:435} INFO -     ✅ Success
+[2026-01-28T10:00:05.585+0000] {garmin_daily_pipeline.py:430} INFO -   [5/5] Deploying garmin_data.v_dashboard_trends...
+[2026-01-28T10:00:06.963+0000] {garmin_daily_pipeline.py:435} INFO -     ✅ Success
+[2026-01-28T10:00:06.964+0000] {garmin_daily_pipeline.py:442} INFO - 📊 Summary:
+[2026-01-28T10:00:06.964+0000] {garmin_daily_pipeline.py:443} INFO -   - Dashboard views deployed: 5
+[2026-01-28T10:00:06.965+0000] {garmin_daily_pipeline.py:444} INFO -   - Dashboard views failed: 0
+[2026-01-28T10:00:06.965+0000] {python.py:240} INFO - Done. Returned value was: {'dashboard_views_deployed': 5, 'dashboard_views_failed': 0, 'deployed_views': ['garmin_data.v_dashboard_daily', 'garmin_data.v_dashboard_weekly', 'garmin_data.v_dashboard_monthly', 'garmin_data.v_dashboard_correlations', 'garmin_data.v_dashboard_trends']}
+[2026-01-28T10:00:06.989+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-01-28T10:00:06.989+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=garmin_daily_pipeline, task_id=deploy_dashboard_views, run_id=scheduled__2026-01-27T02:00:00+00:00, execution_date=20260127T020000, start_date=20260128T100000, end_date=20260128T100006
+[2026-01-28T10:00:07.012+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-01-28T10:00:07.020+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-01-28T10:00:07.021+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

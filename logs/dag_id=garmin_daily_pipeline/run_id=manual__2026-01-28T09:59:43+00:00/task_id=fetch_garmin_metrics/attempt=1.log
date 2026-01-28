@@ -1,0 +1,37 @@
+[2026-01-28T09:59:43.871+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-01-28T09:59:43.878+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: garmin_daily_pipeline.fetch_garmin_metrics manual__2026-01-28T09:59:43+00:00 [queued]>
+[2026-01-28T09:59:43.881+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: garmin_daily_pipeline.fetch_garmin_metrics manual__2026-01-28T09:59:43+00:00 [queued]>
+[2026-01-28T09:59:43.881+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 6
+[2026-01-28T09:59:43.886+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): fetch_garmin_metrics> on 2026-01-28 09:59:43+00:00
+[2026-01-28T09:59:43.888+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=99) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-01-28T09:59:43.888+0000] {standard_task_runner.py:72} INFO - Started process 101 to run task
+[2026-01-28T09:59:43.888+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'garmin_daily_pipeline', 'fetch_garmin_metrics', 'manual__2026-01-28T09:59:43+00:00', '--job-id', '63', '--raw', '--subdir', 'DAGS_FOLDER/garmin_daily_pipeline.py', '--cfg-path', '/tmp/tmp7iel37an']
+[2026-01-28T09:59:43.892+0000] {standard_task_runner.py:105} INFO - Job 63: Subtask fetch_garmin_metrics
+[2026-01-28T09:59:43.908+0000] {task_command.py:467} INFO - Running <TaskInstance: garmin_daily_pipeline.fetch_garmin_metrics manual__2026-01-28T09:59:43+00:00 [running]> on host 996c176c0a46
+[2026-01-28T09:59:43.931+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='garmin_daily_pipeline' AIRFLOW_CTX_TASK_ID='fetch_garmin_metrics' AIRFLOW_CTX_EXECUTION_DATE='2026-01-28T09:59:43+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-28T09:59:43+00:00'
+[2026-01-28T09:59:43.931+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-01-28T09:59:43.937+0000] {garmin_daily_pipeline.py:47} INFO - 📅 Fetching Garmin metrics for 2026-01-28
+[2026-01-28T09:59:43.979+0000] {garmin_daily_pipeline.py:65} INFO - 🔑 Logging into Garmin Connect...
+[2026-01-28T09:59:46.775+0000] {garmin_daily_pipeline.py:68} INFO - ✅ Successfully logged in
+[2026-01-28T09:59:46.776+0000] {garmin_daily_pipeline.py:96} INFO - 📦 Fetching steps...
+[2026-01-28T09:59:46.933+0000] {garmin_daily_pipeline.py:112} WARNING - 🚫 No valid steps data for 2026-01-28
+[2026-01-28T09:59:47.937+0000] {garmin_daily_pipeline.py:96} INFO - 📦 Fetching sleep...
+[2026-01-28T09:59:48.108+0000] {garmin_daily_pipeline.py:109} INFO - ✅ Saved sleep
+[2026-01-28T09:59:49.108+0000] {garmin_daily_pipeline.py:96} INFO - 📦 Fetching stress...
+[2026-01-28T09:59:49.266+0000] {garmin_daily_pipeline.py:109} INFO - ✅ Saved stress
+[2026-01-28T09:59:50.270+0000] {garmin_daily_pipeline.py:96} INFO - 📦 Fetching body_battery...
+[2026-01-28T09:59:50.438+0000] {garmin_daily_pipeline.py:109} INFO - ✅ Saved body_battery
+[2026-01-28T09:59:51.440+0000] {garmin_daily_pipeline.py:96} INFO - 📦 Fetching heart_rate...
+[2026-01-28T09:59:51.632+0000] {garmin_daily_pipeline.py:109} INFO - ✅ Saved heart_rate
+[2026-01-28T09:59:52.638+0000] {garmin_daily_pipeline.py:121} INFO - 📊 Summary:
+[2026-01-28T09:59:52.639+0000] {garmin_daily_pipeline.py:122} INFO -   - Fetched: 4 (sleep, stress, body_battery, heart_rate)
+[2026-01-28T09:59:52.640+0000] {garmin_daily_pipeline.py:123} INFO -   - Skipped: 0 (none)
+[2026-01-28T09:59:52.640+0000] {garmin_daily_pipeline.py:124} INFO -   - Failed: 0 (none)
+[2026-01-28T09:59:52.642+0000] {python.py:240} INFO - Done. Returned value was: {'date': '2026-01-28', 'metrics_fetched': ['sleep', 'stress', 'body_battery', 'heart_rate'], 'metrics_skipped': [], 'metrics_failed': []}
+[2026-01-28T09:59:52.669+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-01-28T09:59:52.670+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=garmin_daily_pipeline, task_id=fetch_garmin_metrics, run_id=manual__2026-01-28T09:59:43+00:00, execution_date=20260128T095943, start_date=20260128T095943, end_date=20260128T095952
+[2026-01-28T09:59:52.686+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-01-28T09:59:52.700+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-28T09:59:52.701+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

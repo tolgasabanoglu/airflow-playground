@@ -1,0 +1,351 @@
+[2026-01-28T09:57:55.736+0000] {processor.py:186} INFO - Started process (PID=42) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T09:57:55.738+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T09:57:55.742+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:57:55.742+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T09:57:55.761+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T09:57:56.110+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:57:56.109+0000] {override.py:1911} INFO - Created Permission View: can edit on DAG:garmin_daily_pipeline
+[2026-01-28T09:57:56.127+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:57:56.127+0000] {override.py:1911} INFO - Created Permission View: can read on DAG:garmin_daily_pipeline
+[2026-01-28T09:57:56.141+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:57:56.141+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG:garmin_daily_pipeline
+[2026-01-28T09:57:56.160+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:57:56.160+0000] {override.py:1911} INFO - Created Permission View: can read on DAG Run:garmin_daily_pipeline
+[2026-01-28T09:57:56.166+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:57:56.166+0000] {override.py:1911} INFO - Created Permission View: can create on DAG Run:garmin_daily_pipeline
+[2026-01-28T09:57:56.175+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:57:56.174+0000] {override.py:1911} INFO - Created Permission View: menu access on DAG Run:garmin_daily_pipeline
+[2026-01-28T09:57:56.184+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:57:56.184+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG Run:garmin_daily_pipeline
+[2026-01-28T09:57:56.185+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:57:56.184+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T09:57:56.197+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:57:56.197+0000] {dag.py:3262} INFO - Creating ORM DAG for garmin_daily_pipeline
+[2026-01-28T09:57:56.333+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:57:56.333+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-27 02:00:00+00:00, run_after=2026-01-28 02:00:00+00:00
+[2026-01-28T09:57:56.365+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.632 seconds
+[2026-01-28T09:58:44.318+0000] {processor.py:186} INFO - Started process (PID=66) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T09:58:44.319+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T09:58:44.321+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:58:44.321+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T09:58:44.342+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T09:58:44.372+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:58:44.372+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T09:58:44.382+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:58:44.382+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-27 02:00:00+00:00, run_after=2026-01-28 02:00:00+00:00
+[2026-01-28T09:58:44.390+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.076 seconds
+[2026-01-28T09:59:14.665+0000] {processor.py:186} INFO - Started process (PID=103) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T09:59:14.666+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T09:59:14.668+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:59:14.667+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T09:59:14.678+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T09:59:14.694+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:59:14.694+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T09:59:14.706+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:59:14.705+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-27 02:00:00+00:00, run_after=2026-01-28 02:00:00+00:00
+[2026-01-28T09:59:14.716+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.057 seconds
+[2026-01-28T09:59:44.962+0000] {processor.py:186} INFO - Started process (PID=156) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T09:59:44.963+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T09:59:44.965+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:59:44.965+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T09:59:44.973+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T09:59:44.987+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:59:44.986+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T09:59:44.997+0000] {logging_mixin.py:190} INFO - [2026-01-28T09:59:44.997+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T09:59:45.003+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.048 seconds
+[2026-01-28T10:00:15.285+0000] {processor.py:186} INFO - Started process (PID=183) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:00:15.287+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:00:15.288+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:00:15.288+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:00:15.301+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:00:15.318+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:00:15.318+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:00:15.332+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:00:15.332+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:00:15.342+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.061 seconds
+[2026-01-28T10:00:45.582+0000] {processor.py:186} INFO - Started process (PID=205) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:00:45.585+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:00:45.587+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:00:45.587+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:00:45.598+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:00:45.616+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:00:45.616+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:00:45.626+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:00:45.626+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:00:45.636+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.056 seconds
+[2026-01-28T10:01:15.952+0000] {processor.py:186} INFO - Started process (PID=215) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:01:15.953+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:01:15.955+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:01:15.955+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:01:15.969+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:01:15.985+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:01:15.985+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:01:16.100+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:01:16.100+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:01:16.110+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.163 seconds
+[2026-01-28T10:01:46.444+0000] {processor.py:186} INFO - Started process (PID=224) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:01:46.445+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:01:46.448+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:01:46.448+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:01:46.460+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:01:46.583+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:01:46.583+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:01:46.594+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:01:46.594+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:01:46.602+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.168 seconds
+[2026-01-28T10:02:16.900+0000] {processor.py:186} INFO - Started process (PID=233) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:02:16.901+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:02:16.904+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:02:16.904+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:02:16.922+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:02:16.940+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:02:16.940+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:02:16.952+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:02:16.952+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:02:16.964+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.072 seconds
+[2026-01-28T10:02:47.246+0000] {processor.py:186} INFO - Started process (PID=242) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:02:47.247+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:02:47.250+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:02:47.250+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:02:47.264+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:02:47.281+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:02:47.281+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:02:47.397+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:02:47.397+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:02:47.405+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.166 seconds
+[2026-01-28T10:03:17.726+0000] {processor.py:186} INFO - Started process (PID=250) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:03:17.727+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:03:17.729+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:03:17.728+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:03:17.740+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:03:17.827+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:03:17.827+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:03:17.834+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:03:17.834+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:03:17.842+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.123 seconds
+[2026-01-28T10:03:48.185+0000] {processor.py:186} INFO - Started process (PID=259) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:03:48.186+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:03:48.189+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:03:48.188+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:03:48.205+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:03:48.222+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:03:48.222+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:03:48.233+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:03:48.233+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:03:48.241+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.063 seconds
+[2026-01-28T10:04:18.554+0000] {processor.py:186} INFO - Started process (PID=268) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:04:18.555+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:04:18.557+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:04:18.557+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:04:18.569+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:04:18.587+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:04:18.586+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:04:18.700+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:04:18.700+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:04:18.709+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.160 seconds
+[2026-01-28T10:04:49.009+0000] {processor.py:186} INFO - Started process (PID=277) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:04:49.010+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:04:49.025+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:04:49.024+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:04:49.047+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:04:49.269+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:04:49.269+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:04:49.291+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:04:49.290+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:04:49.309+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.309 seconds
+[2026-01-28T10:05:19.653+0000] {processor.py:186} INFO - Started process (PID=285) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:05:19.654+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:05:19.657+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:05:19.657+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:05:19.670+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:05:19.686+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:05:19.686+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:05:19.697+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:05:19.697+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:05:19.706+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.061 seconds
+[2026-01-28T10:05:50.006+0000] {processor.py:186} INFO - Started process (PID=294) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:05:50.007+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:05:50.009+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:05:50.009+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:05:50.022+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:05:50.038+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:05:50.038+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:05:50.143+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:05:50.143+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:05:50.152+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.153 seconds
+[2026-01-28T10:06:20.474+0000] {processor.py:186} INFO - Started process (PID=309) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:06:20.475+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:06:20.477+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:06:20.476+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:06:20.488+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:06:20.577+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:06:20.576+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:06:20.584+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:06:20.584+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:06:20.591+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.124 seconds
+[2026-01-28T10:06:50.895+0000] {processor.py:186} INFO - Started process (PID=318) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:06:50.896+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:06:50.898+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:06:50.898+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:06:50.908+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:06:50.921+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:06:50.920+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:06:50.934+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:06:50.934+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:06:50.940+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.051 seconds
+[2026-01-28T10:07:21.192+0000] {processor.py:186} INFO - Started process (PID=327) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:07:21.193+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:07:21.194+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:07:21.194+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:07:21.202+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:07:21.214+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:07:21.213+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:07:21.292+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:07:21.292+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:07:21.300+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.112 seconds
+[2026-01-28T10:07:51.570+0000] {processor.py:186} INFO - Started process (PID=336) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:07:51.571+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:07:51.572+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:07:51.572+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:07:51.583+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:07:51.665+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:07:51.665+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:07:51.673+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:07:51.673+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:07:51.680+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.116 seconds
+[2026-01-28T10:08:21.976+0000] {processor.py:186} INFO - Started process (PID=345) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:08:21.976+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:08:21.979+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:08:21.979+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:08:21.994+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:08:22.015+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:08:22.015+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:08:22.028+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:08:22.028+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:08:22.037+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.066 seconds
+[2026-01-28T10:08:52.352+0000] {processor.py:186} INFO - Started process (PID=354) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:08:52.353+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:08:52.356+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:08:52.356+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:08:52.368+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:08:52.386+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:08:52.386+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:08:52.486+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:08:52.486+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:08:52.494+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.147 seconds
+[2026-01-28T10:09:22.774+0000] {processor.py:186} INFO - Started process (PID=363) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:09:22.776+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:09:22.779+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:09:22.778+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:09:22.789+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:09:22.873+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:09:22.873+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:09:22.880+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:09:22.880+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:09:22.887+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.118 seconds
+[2026-01-28T10:09:53.183+0000] {processor.py:186} INFO - Started process (PID=372) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:09:53.185+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:09:53.188+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:09:53.187+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:09:53.199+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:09:53.213+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:09:53.213+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:09:53.225+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:09:53.225+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:09:53.232+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.055 seconds
+[2026-01-28T10:10:23.538+0000] {processor.py:186} INFO - Started process (PID=381) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:10:23.540+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:10:23.542+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:10:23.542+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:10:23.553+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:10:23.568+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:10:23.568+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:10:23.645+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:10:23.645+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:10:23.654+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.121 seconds
+[2026-01-28T10:10:53.900+0000] {processor.py:186} INFO - Started process (PID=390) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:10:53.901+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:10:53.904+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:10:53.904+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:10:53.913+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:10:54.030+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:10:54.030+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:10:54.042+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:10:54.042+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:10:54.049+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.152 seconds
+[2026-01-28T10:11:24.203+0000] {processor.py:186} INFO - Started process (PID=399) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:11:24.203+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:11:24.204+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:11:24.204+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:11:24.213+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:11:24.227+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:11:24.227+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:11:24.239+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:11:24.239+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:11:24.249+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.049 seconds
+[2026-01-28T10:11:54.542+0000] {processor.py:186} INFO - Started process (PID=408) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:11:54.544+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:11:54.547+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:11:54.547+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:11:54.570+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:11:54.587+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:11:54.586+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:11:54.732+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:11:54.731+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:11:54.741+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.207 seconds
+[2026-01-28T10:12:25.048+0000] {processor.py:186} INFO - Started process (PID=417) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:12:25.049+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:12:25.052+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:12:25.052+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:12:25.068+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:12:25.172+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:12:25.172+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:12:25.180+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:12:25.180+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:12:25.187+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.147 seconds
+[2026-01-28T10:12:55.473+0000] {processor.py:186} INFO - Started process (PID=426) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:12:55.474+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:12:55.476+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:12:55.476+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:12:55.487+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:12:55.502+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:12:55.502+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:12:55.513+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:12:55.513+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:12:55.522+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.054 seconds
+[2026-01-28T10:13:25.806+0000] {processor.py:186} INFO - Started process (PID=435) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:13:25.807+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:13:25.808+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:13:25.808+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:13:25.818+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:13:25.830+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:13:25.830+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:13:25.906+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:13:25.906+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:13:25.914+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.113 seconds
+[2026-01-28T10:13:56.242+0000] {processor.py:186} INFO - Started process (PID=444) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:13:56.242+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:13:56.244+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:13:56.244+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:13:56.256+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:13:56.343+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:13:56.343+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:13:56.350+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:13:56.350+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:13:56.358+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.123 seconds
+[2026-01-28T10:14:26.667+0000] {processor.py:186} INFO - Started process (PID=453) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:14:26.668+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:14:26.670+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:14:26.670+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:14:26.682+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:14:26.695+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:14:26.695+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:14:26.706+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:14:26.706+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:14:26.715+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.052 seconds
+[2026-01-28T10:14:57.011+0000] {processor.py:186} INFO - Started process (PID=462) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:14:57.012+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:14:57.014+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:14:57.014+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:14:57.025+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:14:57.041+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:14:57.040+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:14:57.052+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:14:57.052+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:14:57.061+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.057 seconds
+[2026-01-28T10:15:27.376+0000] {processor.py:186} INFO - Started process (PID=471) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:15:27.377+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:15:27.379+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:15:27.378+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:15:27.387+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:15:27.403+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:15:27.403+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:15:27.415+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:15:27.415+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:15:27.422+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.052 seconds
+[2026-01-28T10:15:57.742+0000] {processor.py:186} INFO - Started process (PID=480) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:15:57.742+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:15:57.744+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:15:57.744+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:15:57.757+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:15:57.770+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:15:57.770+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:15:57.781+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:15:57.781+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:15:57.787+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.051 seconds
+[2026-01-28T10:16:28.117+0000] {processor.py:186} INFO - Started process (PID=489) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:16:28.118+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:16:28.120+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:16:28.120+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:16:28.130+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:16:28.143+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:16:28.143+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:16:28.153+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:16:28.153+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:16:28.161+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.050 seconds
+[2026-01-28T10:16:58.471+0000] {processor.py:186} INFO - Started process (PID=498) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:16:58.472+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:16:58.474+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:16:58.474+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:16:58.486+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:16:58.500+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:16:58.500+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:16:58.513+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:16:58.513+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:16:58.522+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.058 seconds
+[2026-01-28T10:17:28.838+0000] {processor.py:186} INFO - Started process (PID=507) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:17:28.839+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:17:28.840+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:17:28.840+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:17:28.850+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:17:28.865+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:17:28.864+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:17:28.876+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:17:28.876+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:17:28.885+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.050 seconds
+[2026-01-28T10:17:59.222+0000] {processor.py:186} INFO - Started process (PID=516) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:17:59.224+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:17:59.226+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:17:59.226+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:17:59.237+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:17:59.252+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:17:59.252+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:17:59.266+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:17:59.265+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:17:59.275+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.061 seconds
+[2026-01-28T10:18:29.583+0000] {processor.py:186} INFO - Started process (PID=525) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:18:29.584+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:18:29.585+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:18:29.585+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:18:29.594+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:18:29.609+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:18:29.609+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:18:29.619+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:18:29.619+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:18:29.628+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.051 seconds
+[2026-01-28T10:18:59.961+0000] {processor.py:186} INFO - Started process (PID=534) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:18:59.962+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:18:59.964+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:18:59.964+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:18:59.975+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:18:59.994+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:18:59.993+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:19:00.005+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:19:00.005+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:19:00.015+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.057 seconds
+[2026-01-28T10:19:30.310+0000] {processor.py:186} INFO - Started process (PID=543) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:19:30.310+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:19:30.311+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:19:30.311+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:19:30.318+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:19:30.329+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:19:30.329+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:19:30.338+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:19:30.338+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:19:30.346+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.038 seconds
+[2026-01-28T10:20:00.633+0000] {processor.py:186} INFO - Started process (PID=552) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:20:00.634+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:20:00.635+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:20:00.635+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:20:00.644+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:20:00.655+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:20:00.655+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:20:00.667+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:20:00.667+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:20:00.676+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.045 seconds
+[2026-01-28T10:20:30.974+0000] {processor.py:186} INFO - Started process (PID=561) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:20:30.976+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:20:30.978+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:20:30.978+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:20:30.991+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:20:31.006+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:20:31.006+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:20:31.017+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:20:31.017+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:20:31.027+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.060 seconds
+[2026-01-28T10:21:01.298+0000] {processor.py:186} INFO - Started process (PID=570) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:21:01.299+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:21:01.301+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:21:01.300+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:21:01.309+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:21:01.324+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:21:01.324+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:21:01.334+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:21:01.334+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:21:01.343+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.051 seconds
+[2026-01-28T10:21:31.601+0000] {processor.py:186} INFO - Started process (PID=579) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:21:31.601+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:21:31.603+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:21:31.602+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:21:31.610+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:21:31.623+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:21:31.623+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:21:31.633+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:21:31.633+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:21:31.640+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.045 seconds
+[2026-01-28T10:22:01.941+0000] {processor.py:186} INFO - Started process (PID=588) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:22:01.942+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:22:01.943+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:22:01.943+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:22:01.952+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:22:01.966+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:22:01.966+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:22:01.975+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:22:01.975+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:22:01.983+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.046 seconds
+[2026-01-28T10:22:32.327+0000] {processor.py:186} INFO - Started process (PID=597) to work on /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:22:32.328+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/garmin_daily_pipeline.py for tasks to queue
+[2026-01-28T10:22:32.330+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:22:32.330+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:22:32.345+0000] {processor.py:925} INFO - DAG(s) 'garmin_daily_pipeline' retrieved from /opt/airflow/dags/garmin_daily_pipeline.py
+[2026-01-28T10:22:32.363+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:22:32.363+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-01-28T10:22:32.375+0000] {logging_mixin.py:190} INFO - [2026-01-28T10:22:32.375+0000] {dag.py:4180} INFO - Setting next_dagrun for garmin_daily_pipeline to 2026-01-28 02:00:00+00:00, run_after=2026-01-29 02:00:00+00:00
+[2026-01-28T10:22:32.385+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/garmin_daily_pipeline.py took 0.066 seconds

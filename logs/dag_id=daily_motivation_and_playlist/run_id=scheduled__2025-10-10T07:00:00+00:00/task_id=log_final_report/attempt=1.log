@@ -1,0 +1,37 @@
+[2026-01-28T09:58:02.996+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-01-28T09:58:03.004+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: daily_motivation_and_playlist.log_final_report scheduled__2025-10-10T07:00:00+00:00 [queued]>
+[2026-01-28T09:58:03.007+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: daily_motivation_and_playlist.log_final_report scheduled__2025-10-10T07:00:00+00:00 [queued]>
+[2026-01-28T09:58:03.008+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2026-01-28T09:58:03.013+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): log_final_report> on 2025-10-10 07:00:00+00:00
+[2026-01-28T09:58:03.015+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=88) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-01-28T09:58:03.016+0000] {standard_task_runner.py:72} INFO - Started process 89 to run task
+[2026-01-28T09:58:03.016+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'daily_motivation_and_playlist', 'log_final_report', 'scheduled__2025-10-10T07:00:00+00:00', '--job-id', '57', '--raw', '--subdir', 'DAGS_FOLDER/daily_motivation_playlist.py', '--cfg-path', '/tmp/tmp2bpr8uhp']
+[2026-01-28T09:58:03.017+0000] {standard_task_runner.py:105} INFO - Job 57: Subtask log_final_report
+[2026-01-28T09:58:03.033+0000] {task_command.py:467} INFO - Running <TaskInstance: daily_motivation_and_playlist.log_final_report scheduled__2025-10-10T07:00:00+00:00 [running]> on host 66b33d323620
+[2026-01-28T09:58:03.059+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='daily_motivation_and_playlist' AIRFLOW_CTX_TASK_ID='log_final_report' AIRFLOW_CTX_EXECUTION_DATE='2025-10-10T07:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-10T07:00:00+00:00'
+[2026-01-28T09:58:03.059+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-01-28T09:58:03.072+0000] {daily_motivation_playlist.py:299} INFO - ====================================
+[2026-01-28T09:58:03.072+0000] {daily_motivation_playlist.py:300} INFO - ====== YOUR DAILY MORNING REPORT (Winter) =====
+[2026-01-28T09:58:03.072+0000] {daily_motivation_playlist.py:301} INFO - ====================================
+[2026-01-28T09:58:03.072+0000] {daily_motivation_playlist.py:304} INFO - MOTIVATION:
+[2026-01-28T09:58:03.073+0000] {daily_motivation_playlist.py:305} INFO - -> Gemini API failed to generate motivation. Please check logs and API Key.
+[2026-01-28T09:58:03.073+0000] {daily_motivation_playlist.py:306} INFO - 
+[2026-01-28T09:58:03.073+0000] {daily_motivation_playlist.py:309} INFO - DAILY BEVERAGE SUGGESTION:
+[2026-01-28T09:58:03.073+0000] {daily_motivation_playlist.py:311} INFO - Drink: API Failure
+[2026-01-28T09:58:03.073+0000] {daily_motivation_playlist.py:312} INFO - Style: Check Logs
+[2026-01-28T09:58:03.073+0000] {daily_motivation_playlist.py:313} INFO - Flavour: Beverage generation failed for Winter. Check the worker logs for API errors.
+[2026-01-28T09:58:03.074+0000] {daily_motivation_playlist.py:316} INFO - 
+[2026-01-28T09:58:03.074+0000] {daily_motivation_playlist.py:319} INFO - MUSIC SUGGESTION:
+[2026-01-28T09:58:03.074+0000] {daily_motivation_playlist.py:321} INFO - Album: Check Logs
+[2026-01-28T09:58:03.074+0000] {daily_motivation_playlist.py:322} INFO - Artist: API Failure
+[2026-01-28T09:58:03.074+0000] {daily_motivation_playlist.py:323} INFO - Reason: Music generation failed for Winter. Check the worker logs for API errors.
+[2026-01-28T09:58:03.074+0000] {daily_motivation_playlist.py:327} INFO - ====================================
+[2026-01-28T09:58:03.074+0000] {daily_motivation_playlist.py:329} INFO - Final Report logged successfully.
+[2026-01-28T09:58:03.074+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-01-28T09:58:03.077+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-01-28T09:58:03.077+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=daily_motivation_and_playlist, task_id=log_final_report, run_id=scheduled__2025-10-10T07:00:00+00:00, execution_date=20251010T070000, start_date=20260128T095803, end_date=20260128T095803
+[2026-01-28T09:58:03.115+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-01-28T09:58:03.121+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-01-28T09:58:03.122+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
