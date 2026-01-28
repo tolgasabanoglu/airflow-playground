@@ -4979,3 +4979,13 @@ File Path                                         PID  Runtime      # DAGs    # 
 ================================================================================
 [2026-01-28T10:23:47.263+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
 [2026-01-28T10:23:47.272+0000] {manager.py:824} INFO - There are 3 files in /opt/airflow/dags
+[2026-01-28T10:24:03.476+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/garmin_daily_pipeline.py        624  0.01s             1           0  0.10s           2026-01-28T10:23:33                      12
+/opt/airflow/dags/simple_dag.py                   625  0.00s             1           0  0.08s           2026-01-28T10:23:33                      12
+/opt/airflow/dags/daily_motivation_playlist.py                           1           0  0.04s           2026-01-28T10:23:33                      12
+================================================================================
