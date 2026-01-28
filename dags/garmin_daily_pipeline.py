@@ -41,7 +41,8 @@ default_args = {
 def fetch_garmin_daily_metrics(**context):
     """Fetch yesterday's Garmin metrics (steps, sleep, stress, HR, body battery)"""
     execution_date = context['execution_date']
-    target_date = execution_date.date()
+    # Always fetch yesterday's data (completed metrics)
+    target_date = (execution_date - timedelta(days=1)).date()
     date_str = target_date.isoformat()
 
     log.info(f"📅 Fetching Garmin metrics for {date_str}")
@@ -135,7 +136,8 @@ def fetch_garmin_daily_metrics(**context):
 def fetch_garmin_activities(**context):
     """Fetch activity details (incremental - only new activities)"""
     execution_date = context['execution_date']
-    target_date = execution_date.date()
+    # Fetch activities up to yesterday (to match metrics date)
+    target_date = (execution_date - timedelta(days=1)).date()
 
     log.info(f"🏃 Fetching Garmin activities up to {target_date}")
 
