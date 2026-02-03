@@ -1,0 +1,26 @@
+[2026-01-29T13:04:59.918+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-01-29T13:04:59.927+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: daily_motivation_and_playlist.suggest_daily_playlist scheduled__2026-01-28T07:00:00+00:00 [queued]>
+[2026-01-29T13:04:59.931+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: daily_motivation_and_playlist.suggest_daily_playlist scheduled__2026-01-28T07:00:00+00:00 [queued]>
+[2026-01-29T13:04:59.932+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2026-01-29T13:04:59.940+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): suggest_daily_playlist> on 2026-01-28 07:00:00+00:00
+[2026-01-29T13:04:59.943+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=82) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-01-29T13:04:59.945+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'daily_motivation_and_playlist', 'suggest_daily_playlist', 'scheduled__2026-01-28T07:00:00+00:00', '--job-id', '77', '--raw', '--subdir', 'DAGS_FOLDER/daily_motivation_playlist.py', '--cfg-path', '/tmp/tmp1y82kp4k']
+[2026-01-29T13:04:59.946+0000] {standard_task_runner.py:105} INFO - Job 77: Subtask suggest_daily_playlist
+[2026-01-29T13:04:59.947+0000] {standard_task_runner.py:72} INFO - Started process 92 to run task
+[2026-01-29T13:04:59.981+0000] {task_command.py:467} INFO - Running <TaskInstance: daily_motivation_and_playlist.suggest_daily_playlist scheduled__2026-01-28T07:00:00+00:00 [running]> on host 996c176c0a46
+[2026-01-29T13:05:00.034+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='daily_motivation_and_playlist' AIRFLOW_CTX_TASK_ID='suggest_daily_playlist' AIRFLOW_CTX_EXECUTION_DATE='2026-01-28T07:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-28T07:00:00+00:00'
+[2026-01-29T13:05:00.035+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-01-29T13:05:00.041+0000] {daily_motivation_playlist.py:97} INFO - It is currently Winter. Generating dynamic album/artist suggestion.
+[2026-01-29T13:05:00.176+0000] {daily_motivation_playlist.py:167} WARNING - API/JSON error on attempt 1/3: 400 Client Error: Bad Request for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=YOUR_GEMINI_API_KEY_HERE
+[2026-01-29T13:05:01.305+0000] {daily_motivation_playlist.py:167} WARNING - API/JSON error on attempt 2/3: 400 Client Error: Bad Request for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=YOUR_GEMINI_API_KEY_HERE
+[2026-01-29T13:05:03.419+0000] {daily_motivation_playlist.py:167} WARNING - API/JSON error on attempt 3/3: 400 Client Error: Bad Request for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=YOUR_GEMINI_API_KEY_HERE
+[2026-01-29T13:05:03.420+0000] {daily_motivation_playlist.py:172} ERROR - API call failed after max retries.
+[2026-01-29T13:05:03.420+0000] {daily_motivation_playlist.py:176} ERROR - API call failed after max retries. Using failure message.
+[2026-01-29T13:05:03.421+0000] {python.py:240} INFO - Done. Returned value was: {"artist": "API Failure", "album": "Check Logs", "reason": "Music generation failed for Winter. Check the worker logs for API errors."}
+[2026-01-29T13:05:03.435+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-01-29T13:05:03.436+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=daily_motivation_and_playlist, task_id=suggest_daily_playlist, run_id=scheduled__2026-01-28T07:00:00+00:00, execution_date=20260128T070000, start_date=20260129T130459, end_date=20260129T130503
+[2026-01-29T13:05:03.452+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-01-29T13:05:03.461+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-29T13:05:03.462+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
