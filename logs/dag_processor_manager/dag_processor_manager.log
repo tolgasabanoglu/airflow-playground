@@ -10822,3 +10822,13 @@ File Path                                       PID    Runtime      # DAGs    # 
 /opt/airflow/dags/garmin_daily_pipeline.py                               1           0  0.05s           2026-02-03T15:02:25                      12
 /opt/airflow/dags/daily_motivation_playlist.py                           1           0  0.03s           2026-02-03T15:02:25                      12
 ================================================================================
+[2026-02-03T15:03:14.533+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/simple_dag.py                                          1           0  0.07s           2026-02-03T15:02:55                      12
+/opt/airflow/dags/garmin_daily_pipeline.py                               1           0  0.07s           2026-02-03T15:02:55                      12
+/opt/airflow/dags/daily_motivation_playlist.py                           1           0  0.04s           2026-02-03T15:02:55                      12
+================================================================================
