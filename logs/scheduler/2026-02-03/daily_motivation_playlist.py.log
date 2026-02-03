@@ -1965,3 +1965,10 @@
 [2026-02-03T15:02:55.383+0000] {logging_mixin.py:190} INFO - [2026-02-03T15:02:55.383+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2026-02-03T15:02:55.392+0000] {logging_mixin.py:190} INFO - [2026-02-03T15:02:55.392+0000] {dag.py:4180} INFO - Setting next_dagrun for daily_motivation_and_playlist to 2026-02-03 07:00:00+00:00, run_after=2026-02-04 07:00:00+00:00
 [2026-02-03T15:02:55.397+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/daily_motivation_playlist.py took 0.032 seconds
+[2026-02-03T15:03:25.723+0000] {processor.py:186} INFO - Started process (PID=2719) to work on /opt/airflow/dags/daily_motivation_playlist.py
+[2026-02-03T15:03:25.723+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/daily_motivation_playlist.py for tasks to queue
+[2026-02-03T15:03:25.724+0000] {logging_mixin.py:190} INFO - [2026-02-03T15:03:25.724+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/daily_motivation_playlist.py
+[2026-02-03T15:03:25.728+0000] {processor.py:925} INFO - DAG(s) 'daily_motivation_and_playlist' retrieved from /opt/airflow/dags/daily_motivation_playlist.py
+[2026-02-03T15:03:25.737+0000] {logging_mixin.py:190} INFO - [2026-02-03T15:03:25.737+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-02-03T15:03:25.745+0000] {logging_mixin.py:190} INFO - [2026-02-03T15:03:25.745+0000] {dag.py:4180} INFO - Setting next_dagrun for daily_motivation_and_playlist to 2026-02-03 07:00:00+00:00, run_after=2026-02-04 07:00:00+00:00
+[2026-02-03T15:03:25.750+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/daily_motivation_playlist.py took 0.029 seconds
