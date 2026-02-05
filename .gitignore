@@ -1,4 +1,7 @@
 .DS_Store
 .env
-.env
-.DS_Store
+
+# Airflow runtime files
+logs/
+airflow-webserver.pid
+airflow-scheduler.pid
