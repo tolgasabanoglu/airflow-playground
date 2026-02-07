@@ -45,7 +45,7 @@ def fetch_garmin_daily_metrics(**context):
     target_date = (execution_date - timedelta(days=1)).date()
     date_str = target_date.isoformat()
 
-    log.info(f"📅 Fetching Garmin metrics for {date_str}")
+    log.info(f"Fetching Garmin metrics for {date_str}")
 
     # Add spatiotemporal to Python path
     sys.path.insert(0, os.path.join(SPATIOTEMPORAL_PATH, 'garmin'))
@@ -63,10 +63,10 @@ def fetch_garmin_daily_metrics(**context):
         raise ValueError("Missing Garmin credentials in environment")
 
     # Login to Garmin
-    log.info("🔑 Logging into Garmin Connect...")
+    log.info("Logging into Garmin Connect...")
     client = Garmin(username, password)
     client.login()
-    log.info("✅ Successfully logged in")
+    log.info("Successfully logged in")
 
     # Ensure raw data directory exists
     os.makedirs(RAW_DATA_PATH, exist_ok=True)
@@ -89,12 +89,12 @@ def fetch_garmin_daily_metrics(**context):
         file_path = os.path.join(RAW_DATA_PATH, f"{metric_name}_{date_str}.json")
 
         if os.path.exists(file_path):
-            log.info(f"⏭️  Skipping {metric_name} (already exists)")
+            log.info(f"Skipping {metric_name} (already exists)")
             metrics_skipped.append(metric_name)
             continue
 
         try:
-            log.info(f"📦 Fetching {metric_name}...")
+            log.info(f"Fetching {metric_name}...")
             data = fetch_func(date_str)
 
             # Validate data (check if meaningful data exists)
@@ -107,19 +107,19 @@ def fetch_garmin_daily_metrics(**context):
             if is_valid:
                 with open(file_path, 'w') as f:
                     json.dump(data, f, indent=2)
-                log.info(f"✅ Saved {metric_name}")
+                log.info(f"Saved {metric_name}")
                 metrics_fetched.append(metric_name)
             else:
-                log.warning(f"🚫 No valid {metric_name} data for {date_str}")
+                log.warning(f"No valid {metric_name} data for {date_str}")
 
         except Exception as e:
-            log.error(f"⚠️  Error fetching {metric_name}: {e}")
+            log.error(f"Error fetching {metric_name}: {e}")
             metrics_failed.append(metric_name)
             # Don't fail entire task if one metric fails
 
         time.sleep(1)  # Rate limiting
 
-    log.info(f"📊 Summary:")
+    log.info(f"Summary:")
     log.info(f"  - Fetched: {len(metrics_fetched)} ({', '.join(metrics_fetched) if metrics_fetched else 'none'})")
     log.info(f"  - Skipped: {len(metrics_skipped)} ({', '.join(metrics_skipped) if metrics_skipped else 'none'})")
     log.info(f"  - Failed: {len(metrics_failed)} ({', '.join(metrics_failed) if metrics_failed else 'none'})")
@@ -139,7 +139,7 @@ def fetch_garmin_activities(**context):
     # Fetch activities up to yesterday (to match metrics date)
     target_date = (execution_date - timedelta(days=1)).date()
 
-    log.info(f"🏃 Fetching Garmin activities up to {target_date}")
+    log.info(f"Fetching Garmin activities up to {target_date}")
 
     sys.path.insert(0, os.path.join(SPATIOTEMPORAL_PATH, 'garmin'))
 
@@ -153,16 +153,16 @@ def fetch_garmin_activities(**context):
     if not username or not password:
         raise ValueError("Missing Garmin credentials in environment")
 
-    log.info("🔑 Logging into Garmin Connect...")
+    log.info("Logging into Garmin Connect...")
     client = Garmin(username, password)
     client.login()
-    log.info("✅ Successfully logged in")
+    log.info("Successfully logged in")
 
     activities_dir = os.path.join(RAW_DATA_PATH, 'activities')
     os.makedirs(activities_dir, exist_ok=True)
 
     # Fetch activities list (last 100)
-    log.info("📋 Fetching activities list...")
+    log.info("Fetching activities list...")
     try:
         activities = client.get_activities(0, 100)
 
@@ -170,7 +170,7 @@ def fetch_garmin_activities(**context):
         list_file = os.path.join(activities_dir, 'activities_list.json')
         with open(list_file, 'w') as f:
             json.dump(activities, f, indent=2)
-        log.info(f"✅ Saved activities list ({len(activities)} activities)")
+        log.info(f"Saved activities list ({len(activities)} activities)")
 
         new_activities = 0
         existing_activities = 0
@@ -195,13 +195,13 @@ def fetch_garmin_activities(**context):
                     with open(detail_path, 'w') as f:
                         json.dump(details, f, indent=2)
                     new_activities += 1
-                    log.info(f"  ✅ Saved activity {activity_id}")
+                    log.info(f"  Saved activity {activity_id}")
             except Exception as e:
-                log.warning(f"  ⚠️  Failed to fetch activity {activity_id}: {e}")
+                log.warning(f"  Failed to fetch activity {activity_id}: {e}")
 
             time.sleep(1)  # Rate limiting
 
-        log.info(f"📊 Summary:")
+        log.info(f"Summary:")
         log.info(f"  - New activities fetched: {new_activities}")
         log.info(f"  - Existing activities (skipped): {existing_activities}")
 
@@ -212,14 +212,14 @@ def fetch_garmin_activities(**context):
         }
 
     except Exception as e:
-        log.error(f"❌ Error fetching activities: {e}")
+        log.error(f"Error fetching activities: {e}")
         raise
 
 
 # ============ TASK 3: LOAD TO BIGQUERY ============
 def load_to_bigquery_incremental(**context):
     """Load raw JSON files to BigQuery (incremental append)"""
-    log.info("☁️  Loading data to BigQuery...")
+    log.info("Loading data to BigQuery...")
 
     sys.path.insert(0, os.path.join(SPATIOTEMPORAL_PATH, 'garmin'))
 
@@ -235,9 +235,9 @@ def load_to_bigquery_incremental(**context):
     # Ensure dataset exists
     try:
         dataset = client.get_dataset(dataset_id)
-        log.info(f"✅ Dataset exists: {dataset_id}")
+        log.info(f"Dataset exists: {dataset_id}")
     except Exception:
-        log.info(f"📦 Creating dataset: {dataset_id}")
+        log.info(f"Creating dataset: {dataset_id}")
         dataset = bigquery.Dataset(dataset_id)
         dataset.location = "US"
         client.create_dataset(dataset)
@@ -245,9 +245,9 @@ def load_to_bigquery_incremental(**context):
     # Ensure table exists
     try:
         table = client.get_table(table_id)
-        log.info(f"✅ Table exists: {table_id}")
+        log.info(f"Table exists: {table_id}")
     except Exception:
-        log.info(f"📦 Creating table: {table_id}")
+        log.info(f"Creating table: {table_id}")
         schema = [
             bigquery.SchemaField("filename", "STRING"),
             bigquery.SchemaField("raw_json", "STRING")
@@ -256,7 +256,7 @@ def load_to_bigquery_incremental(**context):
         client.create_table(table)
 
     # Get list of already loaded filenames to avoid duplicates
-    log.info("🔍 Checking for already loaded files...")
+    log.info("Checking for already loaded files...")
     query = f"""
         SELECT DISTINCT filename
         FROM `{table_id}`
@@ -284,10 +284,10 @@ def load_to_bigquery_incremental(**context):
                 data = json.load(f)
                 rows.append({"filename": file, "raw_json": json.dumps(data)})
         except Exception as e:
-            log.warning(f"⚠️  Failed to read {file}: {e}")
+            log.warning(f"Failed to read {file}: {e}")
 
     if not rows:
-        log.info("📭 No new files to upload")
+        log.info("No new files to upload")
         return {'rows_uploaded': 0, 'files_skipped': len(skipped)}
 
     # Upload in chunks
@@ -299,19 +299,19 @@ def load_to_bigquery_incremental(**context):
         chunk_num = i // chunk_size + 1
         total_chunks = (len(rows) + chunk_size - 1) // chunk_size
 
-        log.info(f"📤 Uploading chunk {chunk_num}/{total_chunks} ({len(chunk)} rows)...")
+        log.info(f"Uploading chunk {chunk_num}/{total_chunks} ({len(chunk)} rows)...")
 
         try:
             errors = client.insert_rows_json(table_id, chunk)
             if errors:
-                log.error(f"❌ Errors in chunk {chunk_num}: {errors}")
+                log.error(f"Errors in chunk {chunk_num}: {errors}")
             else:
-                log.info(f"  ✅ Chunk {chunk_num} uploaded successfully")
+                log.info(f"  Chunk {chunk_num} uploaded successfully")
                 total_uploaded += len(chunk)
         except Exception as e:
-            log.error(f"❌ Failed to upload chunk {chunk_num}: {e}")
+            log.error(f"Failed to upload chunk {chunk_num}: {e}")
 
-    log.info(f"📊 Summary:")
+    log.info(f"Summary:")
     log.info(f"  - Rows uploaded: {total_uploaded}")
     log.info(f"  - Files skipped (already loaded): {len(skipped)}")
 
@@ -325,14 +325,14 @@ def load_to_bigquery_incremental(**context):
 # ============ TASK 4: DEPLOY TRANSFORMATION VIEWS ============
 def deploy_transformation_views(**context):
     """Deploy BigQuery transformation views from SQL file"""
-    log.info("🔧 Deploying transformation views...")
+    log.info("Deploying transformation views...")
 
     from google.cloud import bigquery
 
     client = bigquery.Client()
     sql_file = os.path.join(SPATIOTEMPORAL_PATH, 'garmin', 'sql', 'views.sql')
 
-    log.info(f"📄 Reading SQL file: {sql_file}")
+    log.info(f"Reading SQL file: {sql_file}")
     with open(sql_file, 'r') as f:
         sql_content = f.read()
 
@@ -353,7 +353,7 @@ def deploy_transformation_views(**context):
     # Filter to only statements that create views
     statements = [s for s in statements if 'CREATE OR REPLACE VIEW' in s]
 
-    log.info(f"🔨 Deploying {len(statements)} views...")
+    log.info(f"Deploying {len(statements)} views...")
 
     deployed = []
     failed = []
@@ -370,14 +370,14 @@ def deploy_transformation_views(**context):
         try:
             job = client.query(sql)
             job.result()  # Wait for completion
-            log.info(f"    ✅ Success")
+            log.info(f"    Success")
             deployed.append(view_name)
         except Exception as e:
-            log.error(f"    ❌ Error: {e}")
+            log.error(f"    Error: {e}")
             failed.append(view_name)
             raise  # Fail the task if any view fails
 
-    log.info(f"📊 Summary:")
+    log.info(f"Summary:")
     log.info(f"  - Views deployed: {len(deployed)}")
     log.info(f"  - Views failed: {len(failed)}")
 
@@ -391,14 +391,14 @@ def deploy_transformation_views(**context):
 # ============ TASK 5: DEPLOY DASHBOARD VIEWS ============
 def deploy_dashboard_views(**context):
     """Deploy dashboard-specific BigQuery views"""
-    log.info("📊 Deploying dashboard views...")
+    log.info("Deploying dashboard views...")
 
     from google.cloud import bigquery
 
     client = bigquery.Client()
     sql_file = os.path.join(SPATIOTEMPORAL_PATH, 'dashboard', 'looker_views.sql')
 
-    log.info(f"📄 Reading SQL file: {sql_file}")
+    log.info(f"Reading SQL file: {sql_file}")
     with open(sql_file, 'r') as f:
         sql_content = f.read()
 
@@ -418,7 +418,7 @@ def deploy_dashboard_views(**context):
 
     statements = [s for s in statements if 'CREATE OR REPLACE VIEW' in s]
 
-    log.info(f"🔨 Deploying {len(statements)} dashboard views...")
+    log.info(f"Deploying {len(statements)} dashboard views...")
 
     deployed = []
     failed = []
@@ -434,14 +434,14 @@ def deploy_dashboard_views(**context):
         try:
             job = client.query(sql)
             job.result()
-            log.info(f"    ✅ Success")
+            log.info(f"    Success")
             deployed.append(view_name)
         except Exception as e:
-            log.error(f"    ❌ Error: {e}")
+            log.error(f"    Error: {e}")
             failed.append(view_name)
             raise
 
-    log.info(f"📊 Summary:")
+    log.info(f"Summary:")
     log.info(f"  - Dashboard views deployed: {len(deployed)}")
     log.info(f"  - Dashboard views failed: {len(failed)}")
 
