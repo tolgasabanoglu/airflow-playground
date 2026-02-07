@@ -22,7 +22,7 @@ import logging
 log = logging.getLogger(__name__)
 
 # ============ CONFIGURATION ============
-SPATIOTEMPORAL_PATH = '/Users/tolgasabanoglu/Desktop/github/spatiotemporal'
+SPATIOTEMPORAL_PATH = '/opt/airflow/spatiotemporal'  # Docker mount point
 RAW_DATA_PATH = os.path.join(SPATIOTEMPORAL_PATH, 'data', 'raw')
 
 default_args = {
