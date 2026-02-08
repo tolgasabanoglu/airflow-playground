@@ -1,7 +1,38 @@
-.DS_Store
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment variables
 .env
+.env.local
+.env.*.local
+
+# Credentials
+*-key.json
+*.pem
+*.key
+
+# macOS
+.DS_Store
+._*
 
 # Airflow runtime files
 logs/
 airflow-webserver.pid
 airflow-scheduler.pid
+airflow.db
+airflow.cfg
+standalone_admin_password.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Virtual environment
+venv/
+env/
+ENV/
